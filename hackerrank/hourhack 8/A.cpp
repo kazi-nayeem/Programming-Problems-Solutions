@@ -31,14 +31,18 @@ typedef pair<ll,ll> pll;
 
 const ll mod = 1000000007ll;
 
-
-int arr[MX];
-
-int main()
-{
+int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "w", stdout);
-
+    int n;
+    string str;
+    cin>>n>>str;
+    int res = 0;
+    for(int i = 2; i < n; i++)
+    {
+        if(str[i]=='0' && str[i-1] == '1' && str[i-2] == '0') res++, i+=2;
+    }
+    cout<<res<<endl;
     return 0;
 }
 
